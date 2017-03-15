@@ -1,0 +1,8 @@
+<div class='container'>
+  <p>List of Chats</p>
+  <ul class="list-group">
+    {{#each users}}
+      <li class="list-group-item"><a href='chat/{{this._id}}'>{{this.username}}</a></li>
+    {{/each}}
+  </ul>
+</div>

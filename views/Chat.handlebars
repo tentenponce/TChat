@@ -1,0 +1,24 @@
+<div class='container'>
+  <p>Chat with <span id='span_to_username'>{{chatName}}</span></p>
+  <ul id='ul_chat_list' class="list-group">
+    {{#each chats}}
+      {{#if this.is_user_id}}
+      <li class="list-group-item text-right">{{this.msg}}</li>
+      {{else}}
+      <li class="list-group-item">{{this.msg}}</li>
+      {{/if}}
+    {{else}}
+      <li id='li_no_chat'>You have no chat history with {{chatName}}</li>
+    {{/each}}
+  </ul>
+  <p id='p_typing' style='display: none;'>Typing...</p>
+  <form id='form_message'>
+    <div class='form-group'>
+      <input data-chat-to='{{chatUserId}}' data-chat-from='{{userId}}' id='textarea_chat' class='form-control' />
+    </div>
+    <div class='text-right'>
+      <button class='btn btn-info'>Send</button>
+    </div>
+  </form>
+</div>
+<script src='/js/chat.js'></script>
